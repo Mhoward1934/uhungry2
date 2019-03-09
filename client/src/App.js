@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import List from "./pages/List/List";
 import Err404 from "./pages/Err404/Err404";
+import Landing from "./pages/Landing/Landing"
 
 class App extends Component {
   render() {
@@ -11,10 +12,11 @@ class App extends Component {
       <Router>
         <div className="text-center">
           <NavBar />
-          <div>
+          <div className="container">
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Landing} />
               <Route exact path="/list" component={List} />
+              <Route exact path="/home" component={Home} />
               <Route component={Err404} />
             </Switch>
           </div>

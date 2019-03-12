@@ -1,4 +1,5 @@
 import React from "react";
+import "./NavBar.css";
 
 function NavBar() {
 
@@ -22,7 +23,6 @@ function NavBar() {
                     </div>
                 </div>
             </nav>
-
         </div>
     );
 };

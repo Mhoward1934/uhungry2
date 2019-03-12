@@ -1,0 +1,16 @@
+.jumbotron {
+    background: none;
+}
+
+.jumbotron h1{
+    font-weight: 800;
+}
+
+.lead {
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    text-emphasis: bold;
+}

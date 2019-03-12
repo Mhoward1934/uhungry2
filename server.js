@@ -4,8 +4,6 @@ const path = require("path");
 const app = express();
 const env = require('dotenv').config();
 
-
-//const routes = require("./routes");
 const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;

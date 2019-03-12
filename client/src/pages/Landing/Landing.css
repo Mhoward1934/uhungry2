@@ -28,7 +28,7 @@ h1 {
 }
 
 body, html {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./veg_table.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./meat_veg.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,3 +70,9 @@ body, html {
 .card-img {
       height: 100%;
   }
+
+p {
+  color: white;
+  font-size: larger;
+  text-emphasis: bold;
+}

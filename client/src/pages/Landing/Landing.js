@@ -16,36 +16,36 @@ class Landing extends Component {
       //   <h1 className="homelink"> <a href="/home">Get Started</a></h1>
 
 
-      <div class="container">
-        <div class="row justify-content-start">
-          <div class="col-4">
-          </div>
-          <div class="col-4">
-          <h1>For the times you have thoughts like these going around in your head:</h1>
+      <div className="container">
+        <div className="row justify-content-start">
+          
+          <div className="col-12">
+          <h2>You're at home, you have a few random items in the fridge, and no idea what to do with them.  
+              So what do you do, warm up that whatever-it-is again?  Ever had thoughts like these going around in your head?</h2>
       </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-4">
+        <div className="row justify-content-center">
+          <div className="col-4">
             <p>"A friend brought over all these exotic spices. I sure would like to try them out."</p>
     </div>
-          <div class="col-4">
+          <div className="col-4">
             <p>"I've been wanting to get more creative with my fish recipes."</p>
     </div>
         </div>
-        <div class="row justify-content-end">
+        {/* <div className="row justify-content-end">
+          <div className="col-4">
+            <p></p>
+    </div>
+          <div className="col-4">
+            <p></p>
+    </div>
+        </div> */}
+        <div class="row justify-content-around">
           <div class="col-4">
-            <p>"My girlfriend's coming over tonight.  What am I going to cook?"</p>
+            <p>"I have company coming over tonight.  What am I going to cook?"</p>
     </div>
           <div class="col-4">
             <p>"I've been on the road for a week and I'm tired of eating out.  What can I make at home instead?"</p>
-    </div>
-        </div>
-        <div class="row justify-content-around">
-          <div class="col-4">
-            One of two columns
-    </div>
-          <div class="col-4">
-            One of two columns
     </div>
         </div>
         <div class="row justify-content-between">
@@ -56,9 +56,9 @@ class Landing extends Component {
           <p>"Hmmmm, I have some leftover steak from last night..."</p>
     </div>
         </div>
-        <h1 className="homelink"> <a href="/home">Let's Get Cookin!</a></h1>
-        <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/home">Block level button</a></button>
-
+        <br />
+        <br />
+        <h1 className="homelink"> <a href="/home">Just click here and let's get cookin!</a></h1>
       </div>
 
 

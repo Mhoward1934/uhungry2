@@ -9,7 +9,8 @@ export default {
   search: function(query) {
     console.log(ID, KEY)
     return axios.get(BASEURL + ID + BASEURL2 + KEY + query);
-  }
+  },
+  
 };
 
 

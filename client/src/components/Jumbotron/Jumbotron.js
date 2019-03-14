@@ -7,7 +7,7 @@ class Jumbotron extends Component {
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4">Welcome to UHungry</h1>
-                    <p className="lead">When it's time to get creative in the kitchen.</p>
+                    <p className="lead">It's time to get creative in the kitchen.</p>
                 </div>
             </div>
         )

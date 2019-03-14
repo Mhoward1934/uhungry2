@@ -1,5 +1,6 @@
 .jumbotron {
     background: none;
+    max-height: 180px;
 }
 
 .jumbotron h1{

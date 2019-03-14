@@ -1,11 +1,19 @@
-/* .Logo {
-    background-image: url();
-  } */
-
   p {
       text-align: left;
   }
 
   h3 {
       text-align: left;
+  }
+
+  body, html {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); 
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: rgb(46, 31, 31);
+    -webkit-background-size: cover;
+    -moz-background-size:  cover;
+    -o-background-size: cover;
+    background-size: cover;
   }

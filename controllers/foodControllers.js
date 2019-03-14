@@ -1,9 +1,12 @@
 const db = require("../models");
+console.log("foodcontroller loaded")
 
 // Defining methods for the foodController
 module.exports = {
   findAll: function(req, res) {
-    db.Food
+    console.log("request")
+    console.log(req)
+    db.Food 
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
@@ -16,9 +19,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log('New Food', req.body)
     db.Food
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+     // .then(dbModel =>  res.json(dbModel))
+      .then(dbModel =>  res.redirect('/home'))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {

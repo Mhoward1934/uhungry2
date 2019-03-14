@@ -6,9 +6,15 @@ const env = require('dotenv').config();
 
 const routes = require("./routes");
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ingredientsdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ingredientsdb", { useNewUrlParser: true }, err=> {
+  if(err) {
+    console.log('Error connecting to the database', err);
+  } else {
+    console.log('Successfully connected to MongoDB');
+  }
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

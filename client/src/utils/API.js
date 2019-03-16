@@ -7,7 +7,7 @@ const KEY = process.env.REACT_APP_API_KEY;
 
 export default {
   search: function(query) {
-    console.log(ID, KEY)
+    //console.log(ID, KEY)
     return axios.get(BASEURL + ID + BASEURL2 + KEY + query);
   },
   

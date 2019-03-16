@@ -17,3 +17,6 @@
     -o-background-size: cover;
     background-size: cover;
   }
+.list-group-item{
+  background-color: none;
+}

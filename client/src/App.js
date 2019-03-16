@@ -20,7 +20,6 @@ class App extends Component {
               <Route component={Err404} />
             </Switch>
           </div>
-
         </div>
       </Router>
     );

@@ -107,7 +107,7 @@ class Home extends Component {
                                         <span className="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div className="dropdown-menu">
-                                        <a className="dropdown-item" href="https://www.yummly.com/recipe/">Asian</a>
+                                        <option>Asian</option>
                                         <a className="dropdown-item" href="https://www.yummly.com/recipe/">American</a>
                                         <a className="dropdown-item" href="https://www.yummly.com/recipe/">Barbecue</a>
                                         <a className="dropdown-item" href="https://www.yummly.com/recipe/">Hawaiian</a>

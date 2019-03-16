@@ -11,29 +11,31 @@ class Home extends Component {
     state = {
         results: [],
         search: "",
-        groceryList:[],
-        showGroceryList:false
+        groceryList: [],
+        showGroceryList: false
     };
+
 
     componentDidMount() {
         this.searchRecipes("");
-        // fetch("http://localhost:3002/api/food")
-        //     .then(response =>response.json())
-        //     .then(data=>{
-        //         console.log(data);
-        //         this.setState({
-        //             groceryList:data,
-        //             showGroceryList:true
-        //         })
-        //     })
-        axios.get("/api/food")
-        .then(data=>{
-                    console.log(data);
+            fetch("http://localhost:3002/api/food")
+             .then(response =>response.json())
+             .then(data=>{
+                 console.log(data);
                     this.setState({
-                        groceryList:data,
-                        showGroceryList:true
-                    })})
-                    .catch(err => console.log(err))
+                     data: data.groceryList
+        //             showGroceryList:true
+                 })
+             })
+        axios.get("/api/food")
+            .then(data => {
+                console.log(data.data);
+                this.setState({
+                    data: data.data.groceryList,
+                    showGroceryList: true
+                })
+            })
+            .catch(err => console.log(err))
     }
 
     searchRecipes = query => {
@@ -57,31 +59,31 @@ class Home extends Component {
         this.searchRecipes(this.state.search);
     };
     addToGroceryList = () => {
-        
+
         console.log(this.state.inputItem)
-        fetch('/api/food', {
-            method:'POST',
+       axios.get('/api/food', {
+            method: 'POST',
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({inputItem: this.state.inputItem})
+            body: JSON.stringify({ inputItem: this.state.inputItem })
         })
-        .then(response =>response.json())
-        .then(data => {
-            console.log(data);
-            fetch("/api/food")
-            .then(response =>response.json())
-            .then(data=>{
-                console.log(data)
-                this.setState({
-                    groceryList:data,
-                    showGroceryList:true
-                })
+            .then(response => response.data.json())
+            .then(data => {
+                console.log(data);
+                axios.get("/api/food")
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        this.setState({
+                            groceryList: data,
+                            showGroceryList: true
+                        })
+                    })
             })
-        })
-        .catch(err => {
-            console.log(err);
-        })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     render() {
@@ -136,10 +138,10 @@ class Home extends Component {
                         </p>
                             <form className="form-inline">
                                 <div className="form-group mx-sm-3 mb-2">
-                                    <label for="inputPassword2" className="sr-only">Grocery List Item</label>
+                                    <label htmlFor="inputPassword2" className="sr-only">Grocery List Item</label>
                                     <input type="text" name="inputItem" value={this.state.inputItem} onChange={this.handleInputChange} className="form-control" id="inputPassword2" placeholder="Grocery List Item" />
                                 </div>
-                                <a style={{color:'white'}} className="btn btn-primary mb-2" onClick={this.addToGroceryList}>Submit</a>
+                                <a style={{ color: 'white' }} className="btn btn-primary mb-2" onClick={this.addToGroceryList}>Submit</a>
                             </form>
                             <div className="form-group">
                                 <label for="exampleFormControlSelect2"></label>
@@ -148,7 +150,7 @@ class Home extends Component {
                                         this.state.showGroceryList &&
                                         this.state.groceryList.map(item => <option key={item._id}>{item.inputItem}</option>)
                                     }
-                                    
+
                                 </select>
                             </div>
                         </div>

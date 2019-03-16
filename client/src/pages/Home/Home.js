@@ -18,29 +18,30 @@ class Home extends Component {
 
     componentDidMount() {
         this.searchRecipes("");
-            fetch("http://localhost:3002/api/food")
-             .then(response =>response.json())
-             .then(data=>{
-                 console.log(data);
-                    this.setState({
-                     data: data.groceryList
-        //             showGroceryList:true
-                 })
-             })
+        fetch("http://localhost:3002/api/food")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    data: data.groceryList
+                    //             showGroceryList:true
+                })
+            })
         axios.get("/api/food")
-        .then(data=>{
-                    console.log(data);
-                    this.setState({
-                        data: data.groceryList,
-                        showGroceryList:true
-                    })})
-                    .catch(err => console.log(err))
+            .then(data => {
+                //console.log(data.data);
+                this.setState({
+                    data: data.groceryList,
+                    showGroceryList: true
+                })
+            })
+            .catch(err => console.log(err))
     }
 
     searchRecipes = query => {
         API.search(query)
             //.then(res => console.log({ results: res.data.matches}))
-            .then(res => this.setState({ results: res.data.matches }))
+            .then(res => this.setState({ results: res.data.matches }, function(){console.log({results: res.data.matches})}))
             .catch(err => console.log(err));
     };
 
@@ -60,18 +61,18 @@ class Home extends Component {
     addToGroceryList = () => {
 
         console.log(this.state.inputItem)
-        axios.get("/api/food", {
-            method:'POST',
+        axios.get('/api/food', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ inputItem: this.state.inputItem })
         })
-            .then(response => response.data.json())
+            .then(response => (response.data))
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 axios.get("/api/food")
-                    .then(response => response.json())
+                    .then(response => response.data)
                     .then(data => {
                         console.log(data)
                         this.setState({

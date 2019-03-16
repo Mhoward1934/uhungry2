@@ -28,14 +28,13 @@ class Home extends Component {
                  })
              })
         axios.get("/api/food")
-            .then(data => {
-                console.log(data.data);
-                this.setState({
-                    data: data.data.groceryList,
-                    showGroceryList: true
-                })
-            })
-            .catch(err => console.log(err))
+        .then(data=>{
+                    console.log(data);
+                    this.setState({
+                        data: data.groceryList,
+                        showGroceryList:true
+                    })})
+                    .catch(err => console.log(err))
     }
 
     searchRecipes = query => {
@@ -61,8 +60,8 @@ class Home extends Component {
     addToGroceryList = () => {
 
         console.log(this.state.inputItem)
-       axios.get('/api/food', {
-            method: 'POST',
+        axios.get("/api/food", {
+            method:'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -107,7 +106,7 @@ class Home extends Component {
                                         <span className="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div className="dropdown-menu">
-                                        <a className="dropdown-item" href="https://www.yummly.com/recipe/">Asian</a>
+                                        <option>Asian</option>
                                         <a className="dropdown-item" href="https://www.yummly.com/recipe/">American</a>
                                         <a className="dropdown-item" href="https://www.yummly.com/recipe/">Barbecue</a>
                                         <a className="dropdown-item" href="https://www.yummly.com/recipe/">Hawaiian</a>

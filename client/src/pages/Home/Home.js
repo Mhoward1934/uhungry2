@@ -12,19 +12,20 @@ class Home extends Component {
         results: [],
         search: "",
         groceryList: [],
-        showGroceryList: false
+        showGroceryList: false,
+        inputItem: ""
     };
 
 
     componentDidMount() {
         this.searchRecipes("");
-        fetch("http://localhost:3002/api/food")
+        fetch("/api/food")
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 this.setState({
-                    data: data.groceryList
-                    //             showGroceryList:true
+                    data: data.groceryList,
+                    // showGroceryList:true
                 })
             })
         axios.get("/api/food")
@@ -61,7 +62,7 @@ class Home extends Component {
     addToGroceryList = () => {
 
         console.log(this.state.inputItem)
-        axios.get('/api/food', {
+        axios.get("/api/food", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -141,10 +142,10 @@ class Home extends Component {
                                     <label htmlFor="inputPassword2" className="sr-only">Grocery List Item</label>
                                     <input type="text" name="inputItem" value={this.state.inputItem} onChange={this.handleInputChange} className="form-control" id="inputPassword2" placeholder="Grocery List Item" />
                                 </div>
-                                <a style={{ color: 'white' }} className="btn btn-primary mb-2" onClick={this.addToGroceryList}>Submit</a>
+                                <div style={{ color: 'white' }} className="btn btn-primary mb-2" onClick={this.addToGroceryList}>Submit</div>
                             </form>
                             <div className="form-group">
-                                <label for="exampleFormControlSelect2"></label>
+                                <label htmlFor="exampleFormControlSelect2"></label>
                                 <select multiple className="form-control" id="exampleFormControlSelect2">
                                     {
                                         this.state.showGroceryList &&

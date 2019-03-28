@@ -40,19 +40,19 @@ class Landing extends Component {
             <p></p>
     </div>
         </div> */}
-        <div class="row justify-content-around">
-          <div class="col-4">
+        <div className="row justify-content-around">
+          <div className="col-4">
             <p>"I have company coming over tonight.  What am I going to cook?"</p>
     </div>
-          <div class="col-4">
+          <div className="col-4">
             <p>"I've been on the road for a week and I'm tired of eating out.  What can I make at home instead?"</p>
     </div>
         </div>
-        <div class="row justify-content-between">
-          <div class="col-4">
+        <div className="row justify-content-between">
+          <div className="col-4">
           <p>"There's a can of tuna in the pantry, and I never know what to do with it."</p>
     </div>
-          <div class="col-4">
+          <div className="col-4">
           <p>"Hmmmm, I have some leftover steak from last night..."</p>
     </div>
         </div>

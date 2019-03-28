@@ -22,8 +22,8 @@ module.exports = {
     console.log('New Food', req.body)
     db.Food
       .create(req.body)
-     // .then(dbModel =>  res.json(dbModel))
-      .then(dbModel =>  res.redirect('/home'))
+      // .then(dbModel =>  res.json(dbModel))
+      .then(dbModel =>  res.redirect("./food"))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
